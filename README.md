@@ -8,17 +8,17 @@ TODO: Delete this and the text above, and describe your gem
 
 Add this line to your application's Gemfile:
 
+Use bundler to install it
+
 ```ruby
 gem 'money', :git => 'git://github.com/mido18/money_convertion.git'
 ```
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
 
-    $ gem install money
 
 ## Usage
 
