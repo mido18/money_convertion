@@ -9,6 +9,44 @@ require "money"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
+Money.conversion_rates('EUR', {
+                                'USD'     => 1.11,
+                                'Bitcoin' => 0.0047
+                            })
+
+# Instantiate money objects:
+
+fifty_eur = Money.new(50, 'EUR')
+
+# Get amount and currency:
+
+puts fifty_eur.amount   # => 50
+puts fifty_eur.currency # => "EUR"
+puts fifty_eur.inspect  # => "50.00 EUR"
+
+puts fifty_eur.convert_to('USD') # => 55.50 USD
+
+twenty_dollars = Money.new(20, 'USD')
+
+puts fifty_eur + twenty_dollars # => 68.02 EUR
+
+puts fifty_eur - twenty_dollars # => 31.98 EUR
+
+puts fifty_eur / 2              # => 25 EUR
+
+puts twenty_dollars * 3         # => 60 USD
+
+fifty_eur_in_usd = fifty_eur.convert_to('USD')
+
+puts fifty_eur_in_usd == Money.new(55.50,"USD") # => true
+puts twenty_dollars == Money.new(20, 'USD') # => true
+puts twenty_dollars == Money.new(30, 'USD') # => false
+
+puts fifty_eur_in_usd == fifty_eur          # => true
+
+puts twenty_dollars > Money.new(5, 'USD')   # => true
+puts twenty_dollars < fifty_eur             # => true
+
 
 require "irb"
 IRB.start

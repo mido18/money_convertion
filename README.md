@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'money'
+gem 'money', :git => 'git://github.com/mido18/money_convertion.git'
 ```
 
 And then execute:
